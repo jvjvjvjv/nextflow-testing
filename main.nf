@@ -1,12 +1,9 @@
 // main.nf
 
 process generateNumbers {
-    executor 'slurm'
     cpus 1
     memory '1G'
     time '1h'
-    clusterOptions '--nodes 1'
-    conda 'pandas numpy'
 
     input:
     val x
@@ -21,12 +18,10 @@ process generateNumbers {
 }
 
 process combineFiles {
-    executor 'local'
-    memory '4G'
+    memory '2G'
     cpus 1
     time '1h'
     publishDir params.output_dir, mode: 'copy', overwrite: true
-    conda 'pandas numpy'
 
     input:
     path "results_dir/*"
@@ -42,11 +37,9 @@ process combineFiles {
 
 process calculateStatistics {
     publishDir params.output_dir, mode: 'copy', overwrite: true
-    executor 'local'
     cpus 1
     time '1h'
     memory '1G'
-    conda 'pandas numpy'
 
     input:
     path combined_results

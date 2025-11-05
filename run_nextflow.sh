@@ -18,5 +18,6 @@ outdir='/scratch3/workspace/jason_vailionis_uri_edu-kinetics/nextflow_results'
 nextflow run main.nf \
     -resume \
     -work-dir "$workdir" \
+    -profile unity \
     --output_dir "$outdir" \
     --num_replicates 10
