@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # generate_random_numbers.py
 import numpy as np
 import sys

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # calculate_statistics.py
 import pandas as pd
 import sys

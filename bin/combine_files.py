@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 # combine_files.py
 import pandas as pd
 import sys

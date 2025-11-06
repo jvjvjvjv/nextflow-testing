@@ -13,7 +13,7 @@ process generateNumbers {
 
     script:
     """
-    python ${projectDir}/lib/generate_random_numbers.py result_${x}.tsv
+    generate_random_numbers.py result_${x}.tsv
     """
 }
 
@@ -31,7 +31,7 @@ process combineFiles {
 
     script:
     """
-    python ${projectDir}/lib/combine_files.py results_dir/ combined_results.tsv
+    combine_files.py results_dir/ combined_results.tsv
     """
 }
 
@@ -49,7 +49,7 @@ process calculateStatistics {
 
     script:
     """
-    python ${projectDir}/lib/calculate_statistics.py ${combined_results} output_file_
+    calculate_statistics.py ${combined_results} output_file_
     """
 }
 
