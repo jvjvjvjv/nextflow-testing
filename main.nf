@@ -13,7 +13,6 @@ process generateNumbers {
 
     script:
     """
-    sleep 3000
     generate_random_numbers.py result_${x}.tsv
     """
 }
